@@ -1,6 +1,6 @@
 import { ShoppingCart } from "lucide-react";
+import Ratings from "./Ratings";
 
-import Rating from "./Ratings";
 
 const Modal = ({ product, onClose, handleAddToCart }: any) => {
   return (
@@ -22,7 +22,7 @@ const Modal = ({ product, onClose, handleAddToCart }: any) => {
               </p>
             </div>
             <div className="flex space-x-5 items-center">
-              <Rating value={product?.ratings} />
+              <Ratings value={product?.ratings} />
             </div>
             <p className="text-sm lg:text-base mb-8 lg:mb-16 font-semibold mt-3 text-gray-800">
               {product?.seller}
