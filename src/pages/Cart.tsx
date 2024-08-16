@@ -1,3 +1,4 @@
+import OrderSummary from "../components/OrderSummary";
 
 
 const Cart = () => {
