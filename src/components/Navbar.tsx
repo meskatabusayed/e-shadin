@@ -32,6 +32,14 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link
+                className="rounded-lg backdrop-blur-[2px] p-1 inline-block"
+                to={"/login"}
+              >
+                Login
+              </Link>
+            </li>
+            <li>
               <a
                 className="rounded-lg backdrop-blur-[2px] p-1 inline-block"
                 href="#"
