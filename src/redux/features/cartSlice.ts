@@ -45,6 +45,22 @@ export const cartSlice = createSlice({
                 }
                 return product;
             })
+            state.selectedItems = state.products.reduce((total : number , product : any) => {
+                return Number(total + product.quantity);
+            } , 0)
+            state.totalPrice = state.products.reduce((total : number , product : any) => {
+                return Number(total + product.quantity * product.price);
+            } , 0)
+
+            state.tax = state.totalPrice * state.taxRate;
+            state.grandTotal = state.totalPrice + state.totalPrice * state.taxRate
+        },
+        clearCart : (state) => {
+            state.products = [];
+            state.selectedItems = 0;
+            state.tax = 0;
+            state.totalPrice = 0;
+            state.grandTotal = 0;
         }
 
     }
@@ -57,5 +73,5 @@ export const cartSlice = createSlice({
 //     } , 0)
 // }
 
-export const {addToCart , updateQuaintity} = cartSlice.actions;
+export const {addToCart , updateQuaintity , clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
