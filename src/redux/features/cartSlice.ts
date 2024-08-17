@@ -32,6 +32,19 @@ export const cartSlice = createSlice({
             state.tax = state.totalPrice * state.taxRate;
             state.grandTotal = state.totalPrice + state.totalPrice * state.taxRate
 
+        },
+        updateQuaintity : (state , action) => {
+            const products = state.products.map((product) => {
+                if(product.id === action.payload.id){
+                    if(action.payload.type === 'increment'){
+                        product.quantity += 1
+                    }
+                    else if(action.payload.type === 'decrement'){
+                        product.quantity -= 1
+                    }
+                }
+                return product;
+            })
         }
 
     }
@@ -44,5 +57,5 @@ export const cartSlice = createSlice({
 //     } , 0)
 // }
 
-export const {addToCart} = cartSlice.actions;
+export const {addToCart , updateQuaintity} = cartSlice.actions;
 export default cartSlice.reducer;
