@@ -26,7 +26,7 @@ const Header = () => {
             <li>
               <Link
                 className="rounded-lg backdrop-blur-[2px] p-1 inline-block"
-                to={"/products"}
+                to={"/"}
               >
                 Products
               </Link>
