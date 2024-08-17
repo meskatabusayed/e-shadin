@@ -25,6 +25,12 @@ export const cartSlice = createSlice({
             state.selectedItems = state.products.reduce((total : number , product : any) => {
                 return Number(total + product.quantity);
             } , 0)
+            state.totalPrice = state.products.reduce((total : number , product : any) => {
+                return Number(total + product.quantity * product.price);
+            } , 0)
+
+            state.tax = state.totalPrice * state.taxRate;
+            state.grandTotal = state.totalPrice + state.totalPrice * state.taxRate
 
         }
 
